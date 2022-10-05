@@ -6,6 +6,7 @@ interface IOptions {
   path: string;
   spawnOpt: { stdio: 'inherit' };
   useGlobalElectron?: boolean;
+  args: string[];
 }
 
 class ProcessManager {
@@ -31,6 +32,7 @@ class ProcessManager {
         electron,
         path: process.cwd(),
         spawnOpt: { stdio: 'inherit' },
+        args: [],
       },
       ...(options || {}),
     };
@@ -38,7 +40,11 @@ class ProcessManager {
 
   protected spawn(spawnOpt: SpawnOptions) {
     const args = ['-r process'];
-    this.electronProc = spawn(this.opt.electron, args.concat([this.opt.path]), spawnOpt);
+    this.electronProc = spawn(
+      this.opt.electron,
+      args.concat([this.opt.path], this.opt.args ?? []),
+      spawnOpt,
+    );
     this.info(`started electron process: ${this.electronProc!.pid}`);
   }
 
