@@ -1,5 +1,5 @@
 {
-  "name": "@ttay24/webpack-electron-reload",
+  "name": "ttay24-webpack-electron-reload",
   "version": "1.1.0",
   "description": "Webpack plugin which restarts electron process on recompile",
   "main": "dist/index.js",
