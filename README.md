@@ -7,7 +7,7 @@ Forked from https://github.com/tverdohleb/webpack-electron-reload. This package 
 ## Installation
 
 ```
-npm install --save-dev webpack-electron-reload
+npm install --save-dev ttay24-webpack-electron-reload
 ```
 
 ## Usage
