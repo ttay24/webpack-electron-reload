@@ -18,7 +18,7 @@ npm install --save-dev webpack-electron-reload
 const path = require('path');
 const ElectronReloadPlugin = require('webpack-electron-reload')({
   path: path.join(__dirname, './dist/main.js'),
-  args: ['some', 'args']
+  args: ['some', 'args'],
 });
 
 module.exports = {
